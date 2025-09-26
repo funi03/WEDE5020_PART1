@@ -1,4 +1,4 @@
- /* Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -67,6 +67,14 @@ body {
 .donate-btn:hover {
   background: #ffd77f;
   transform: scale(1.05);
+}
+
+/* Hamburger menu (hidden by default) */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* Hero Section with Background Image */
@@ -230,10 +238,47 @@ body {
   box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* =================== Responsive =================== */
+
+/* Tablet (<= 768px) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #ff6b6b;
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
   .hero h1 { font-size: 2rem; }
   .hero h2 { font-size: 1rem; }
   .hero-btn { font-size: 1rem; padding: 10px 20px; }
-  .quote { width: 95%; padding: 20px; }
+
+  .programme-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .logo-small img { width: 70px; }
+  .hero { height: 70vh; }
+  .hero h1 { font-size: 1.5rem; }
+  .hero h2 { font-size: 0.9rem; }
+  .hero-btn { font-size: 0.9rem; padding: 8px 16px; }
+
+  .quote { font-size: 1rem; padding: 15px; }
+  .programme-cards { grid-template-columns: 1fr; }
+  .programme-card h3 { font-size: 1.2rem; }
 }
